@@ -1,0 +1,20 @@
+def zad1(a, b, c):
+    delta = b * b - 4 * a * c
+    if (delta > 0):
+        print("Delta wieksza od zera")
+    else:
+        print("Delta mniejsza od zera")
+
+
+def zad2(a, b, c):
+    a = int(input("Enter the first number: "))
+    b = int(input("Enter the second number: "))
+    c = int(input("Enter the third number: "))
+
+    sys_2 = bin(a)
+    sys_8 = oct(b)
+    sys_16 = hex(c)
+
+    print("wartosc", a, "to", sys_2)
+    print("wartosc", b, "to", sys_8)
+    print("wartosc", c, "to", sys_16)
