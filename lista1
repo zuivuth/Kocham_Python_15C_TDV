@@ -1,0 +1,103 @@
+def zad1():
+    print("Tata: Andrzej, Mama: Monika, Strasza siostra: Laura, Mlodsza siostra: Wiktoria, Mlodszy brat: Michal")
+
+
+def zad2():
+    print("Tata: Andrzej\nMama: Monika\nStrasza siostra: Laura\nMlodsza siostra: Wiktoria\nMlodszy brat: Michal")
+
+
+def zad3():
+    print("****\n" * 3)
+    print(f"Obw = {4 * 2 + 3 * 2}")
+    print(f"Pole = {4 * 3}")
+
+
+def zad4():
+    cenaPrzed = [3.69, 4.5, 3.6, 4.0, 3.99, 3.59]
+    cenaPo = [4.5, 5.5, 4.69, 4.99, 4.00]
+    odp_a = max(cenaPo)
+    odp_b = min(cenaPo + cenaPrzed)
+    sum = 0
+    for i in cenaPrzed:
+        sum += i
+    odp_c = sum / len(cenaPrzed)
+    sum = 0
+    for i in cenaPo:
+        sum += i
+    odp_d = sum / len(cenaPrzed)
+    print(odp_a)
+    print(odp_b)
+    print(odp_c)
+    print(odp_d)
+
+
+def zad5():
+    serial_heroes = {
+        "Rick": 4,
+        "Morty": 5,
+        "Summer": 6,
+        "Beth": 4,
+        "Jerry": 5
+    }
+    print(serial_heroes)
+
+
+def zad6():
+    liczba = int(input("Podaj liczbe: "))
+    if liczba >= 0:
+        print(liczba)
+    else:
+        print(-liczba)
+
+
+def zad7():
+    k = int(input("Proszę o podanie liczby k: "))
+    for liczba in range(20, 81):
+        if liczba % k == 0:
+            print(liczba)
+
+
+def zad8():
+    k = int(input("Proszę o podanie liczby k: "))
+    min = int(input("Proszę o podanie min: "))
+    max = int(input("Proszę o podanie max: "))
+    for liczba in range(min, max + 1):
+        if liczba % k == 0:
+            print(liczba)
+
+
+def zad9():
+    a = int(input("Proszę o podanie a: "))
+    b = int(input("Proszę o podanie b: "))
+    c = int(input("Proszę o podanie c: "))
+    gate = False
+    if pow(a, 2) + pow(b, 2) == pow(c, 2):
+        gate = True
+    elif pow(a, 2) + pow(c, 2) == pow(b, 2):
+        gate = True
+    elif pow(c, 2) + pow(b, 2) == pow(a, 2):
+        gate = True
+    if gate:
+        print("To sa trojki pitagorejskie")
+    else:
+        print("To nie sa trojki pitagorejskie")
+
+def zad11():
+    print("Podaj dwie imiona do porównania:")
+    imie1 = input("Pierwsze imie:")
+    imie2 = input("Drugie imie:")
+
+    if imie1 == imie2:
+        print(f"{imie1} i {imie2} są takie same")
+    else:
+        print(f"{imie1} i {imie2} są różne")
+
+
+def zad12():
+    sum = 0
+    i = 1
+    while i <= 100:
+        if i % 2 != 0:
+            sum += i
+        i += 1
+    print(f"Suma liczb nieparzystych w przedziale od 1 do 100 wynosi: {sum}")
