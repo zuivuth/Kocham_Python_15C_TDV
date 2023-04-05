@@ -1,0 +1,73 @@
+Sprawozdanie do listy1
+
+Stworzyłem program zad1() w celu wypisania imion członków rodziny w jednym tylko printcie.
+Nic nie podajemy do programu a program sam automacztynie wyświetla.
+
+Stworzyłem program zad2() w celu wypisania imion członków rodziny ale tym razem każdy imion był wyświetlany w nowej linij.
+Nic nie podajemy do programu a program sam automacztynie wyświetla.
+
+Stworzyłem program zad3() w celu wyświetlania prostokąta 3x4 za pomocą * i poźniej obliczał obwód i pole tego prostokąta.
+Nic nie podajemy do programu a program sam automacztynie wyświetla.
+
+Stworzyłem program zad4(), który ma przygotować raport pokazujący zmiany cen napoju Coca-Coli po dodaniu nowego podatku cukrowego.
+Stworzyłem tablicę cenaPrzed, która przechowuje ceny napoju przed podatkiem i cenaPo, która przechowuje ceny napoju po podatku.
+Zmienna odp_a przechowuje największą cenę po nałożeniu podatku.
+Zmienna odp_b przechowuje najniższą cenę biorą pod uwagę wszystkiego ceny przed i po nałożeniu podatku.
+Stworzyłem zmienna sum, która będzie mi przechowywała sumę wszystkich cen przed nałożeniem podatku. Na początku przypisuje jemu wartość 0.
+Podczas pierwszej pętli for do zmiennej sum zostaną dodane ceny w tablicy cenaPrzed.
+Zmienna odp_c przechowuje średnią wartość wszystkich cen w tablicy cenaPrzed.
+Poźniej przypisałem do zmiennej sum wartość 0, żeby od nowa liczyć sumy wszystkich cen z tablicy cenaPo.
+W drugiej pętli for do zmiennej sum zostaną dodane wszystkie ceny z tablicy cenaPo.
+Zmienna odp_d przechowuje średnią wartość wszystkich cen w tablicy cenaPo.
+Nic nie podajemy do programu a program sam automacztynie wyświetla.
+
+Stworzyłem program zad5() w celu stworzenia słownika, w którym kluczami będą imiona bohaterów mojego ulubionego serialu, a wartościami ilość liter przypisanego imienia.
+Użyłem prostą konstuktor do stworzenia słownika i po kolei przypisałem imiona bohaterów wraz z ilością liter przypisanego imienia.
+Pod koniec wyświetliłem cały słownik.
+Nic nie podajemy do programu a program sam automacztynie wyświetla.
+
+Stworzyłem program zad6(), która ma za zadanie obliczyć wartość bezwględną z liczby podanej przez użytkownika.
+Zmienna liczba została stworzona, żeby przechowywać liczbę podana przez użytkownika.
+Poźniej dałem warunek if i else taki, że jeżeli liczba będzie większa lub równa 0 to program po prostu wyświetla tę liczbę.
+W przeciwnym wypadku zostanie wyświetlona -liczba.
+
+Stworzyłem program zad7(), która ma za zadanie wyświetlenie wszystkie liczby całkowite z przedziału od 20 do 80 podzielne przez dowolną liczbę k, którą podaje użytkownik.
+Zmienna k została stworzona, żeby przechowywać liczbę podana przez użytkownika.
+Poźniej w pętli for, stworzyłem zmienna liczba, która będzie miała wartości od 20 do 80 i będzie ona sprawdzać czy można podzielić zmienną liczba przez zmienną k.
+Jeżeli zmienna liczba jest podzielna przez zmienna k to zostanie wyświetlana zmienna liczba.
+
+Stworzyłem program zad8(), która ma za zadanie wyświetlenie wszystkie liczby całkowite z przedziału liczb podanych przez użytkownika, podzielne przez dowolną liczbę k, którą podaje użytkownik.
+Zmienna k została stworzona, żeby przechowywać liczbę k podana przez użytkownika.
+Zmienna min została stworzona, żeby przechowywać dolną granicę przedziału liczb podana przez użytkownika.
+Zmienna max została stworzona, żeby przechowywać górna granicę przedziału liczb podana przez użytkownika.
+Poźniej w pętli for, stworzyłem zmienna liczba, która będzie miała wartości od min do max-1, żeby zmienna max była wciąż brana pod uwagę i będzie ona sprawdzać czy można podzielić zmienną liczba przez zmienną k.
+Jeżeli zmienna liczba jest podzielna przez zmienna k to zostanie wyświetlana zmienna liczba.
+
+Stworzyłem program zad9(), który dla trzech liczb a,b i c wprowadzonych z klawiatury sprawdza, czy są to trójki pitagorejskie.
+Zmienna a została stworzona, żeby przechowywać liczbę a podana przez użytkownika.
+Zmienna b została stworzona, żeby przechowywać liczbę b podana przez użytkownika.
+Zmienna c została stworzona, żeby przechowywać liczbę c podana przez użytkownika.
+Stworzyłem zmienna boolenową gate i przypisałem jej wartość False na początek.
+W if-ie sprawdziłem czy zmienna a podniesiona do kwadratu dodana do zmiennej b podniesionej do kwadratu będzie równa zmiennej c podniesionej do kwadratu.
+Jeżeli zwróci true to przypisuje do zmiennej gate wartość True.
+Jeżeli if zwrócił false to sprawdziłem czy zmienna a podniesiona do kwadratu dodana do zmiennej c podniesionej do kwadratu będzie równa zmiennej b podniesionej do kwadratu.
+Jeżeli zwróci true to przypisuje do zmiennej gate wartość True.
+Jeżeli po pierwszym elif-ie był false to w kolejnym elif-ie sprawdziłem czy zmienna c podniesiona do kwadratu dodana do zmiennej b podniesionej do kwadratu będzie równa zmiennej a podniesionej do kwadratu.
+Jeżeli zwróci true to przypisuje do zmiennej gate wartość True.
+Na koniec sprawdzam w if-ie czy gate ma wartość true.
+Jeżeli ma to wyświetlam komunikat, że to są trójki pigorejskiego a w przeciwnym wypadku wyświetlam komunikat, że nie są to trójki pitagorejskie.
+
+Stworzyłem program zad11(), który korzystając z konstrukcji if-else, porównuje ze sobą dwa podane przez użytkownika imiona.
+Zmienna imie1 została stworzona, żeby przechowywać imie pierszej osoby podanej przez użytkownika.
+Zmienna imie2 została stworzona, żeby przechowywać imie drugiej osoby podanej przez użytkownika.
+Następnie w if-ie sprawdziłem czy zmienna imie1 jest taka sama jak zmienna imie2.
+Jeżeli 2 zmienne są takie same do wyświetlam komunikat, że zmienna imie1 i zmienna imie2 są takie same a w przeciwnym wypadku, że są różne.
+
+Stworzyłem program zad12(), który korzystając z instrukcji while, sumuje liczby nieparzyste w przedziale od 1 do 100.
+Stworzyłem zmienna sum, która będzie przechowywała sumę liczb i przypisałem wartość 0.
+Stworzyłem zmienna i, do której przypisałem wartość 1.
+Rozpocząłem funkcję while dając warunek dopóki zmienna i będzie mniejsza lub równa 100.
+Po każdej pętli while inkrementowałem zmienna i o 1.
+W pętli while mam warunek if, która sprawdza czy reszta z dzielenia zmiennej i przez liczbe 2 jest równa 0.
+Jeżeli nie jest to do zmiennej sum dodaje wartość zmiennej i.
+Pod koniec wyświetlam sumę wszystkich liczb nieparzystych od 1 do 100.
