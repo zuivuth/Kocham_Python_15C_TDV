@@ -1,0 +1,114 @@
+def zad1(*args):
+    dict = {}
+    for num in args:
+        tmp = []
+        for i in range(1, num):
+            if num % i == 0:
+                tmp.append(i)
+        if sum(tmp) == num:
+            dict[num] = True
+        else:
+            dict[num] = False
+    return dict
+
+def liczba_catalana(n):
+    if n <= 1:
+        return 1
+    res = 0
+    for i in range(n):
+        res += liczba_catalana(i) * liczba_catalana(n - i - 1)
+    return res
+def zad2(n, preferences = 'a'):
+
+    if n < 0:
+        print("n musi być nieujemny!")
+        return
+    elif n == 0:
+        return
+    else:
+        counter = 0
+        c = []
+        while liczba_catalana(counter) < n:
+            c.append(liczba_catalana(counter))
+            counter += 1
+    if preferences == 'a':
+        print("Liczby Catalana mniejsza od n: ", c)
+    elif preferences == 'p':
+        print("Liczby Catalana parzyste mniejsza od n: ", [c for c in c if c % 2 == 0])
+    elif preferences == 'n':
+        print("Liczby Catalana nieparzyste mniejsza od n: ", [c for c in c if c % 2 == 1])
+    else:
+        print("Nieprawidłowe preferencje")
+
+def zad3(n = 541):
+    arr = [True] * (n + 1)
+    arr[0], arr[1] = False, False
+    for i in range(2, int(n ** 0.5) + 1):
+        if arr[i]:
+            for j in range(i ** 2, n + 1, i):
+                arr[j] = False
+    primes = [i for i in range(2, n + 1) if arr[i]]
+    return primes
+
+def zad4(n, sort="asc"):
+    numbers = list(filter(lambda x: x % 2 == 0 and x % 3 != 0, range(1, n * 10)))
+    filtered_numbers = numbers[:n]
+    sorted_numbers = sorted(filtered_numbers, reverse=(sort == "desc"))
+    print(sorted_numbers)
+
+def zad5():
+    produkty = []
+
+    def dodaj_produkt():
+        nr = input("Podaj numer: ")
+        nazwa = input("Podaj nazwę produktu: ")
+        ilosc = input("Podaj ilość: ")
+        cena = input("Podaj cenę: ")
+
+        produkty.append((nr, nazwa, ilosc, cena))
+
+    def usun_produkt():
+        nr = input("Podaj numer produktu do usunięcia: ")
+        for produkt in produkty:
+            if nr == produkt[0]:
+                produkty.remove(produkt)
+                break
+
+    def wyswietl_produkty():
+        print("Nr\tNazwa\t\tIlość\tCena")
+        for produkt in produkty:
+            print(produkt[0] + "\t" + produkt[1] + "\t\t" + produkt[2] + "\t" + produkt[3])
+
+    def zmodyfikuj_produkt():
+        nr = input("Podaj numer produktu do zmodyfikowania: ")
+        for produkt in produkty:
+            if nr == produkt[0]:
+                nazwa = input("Podaj nową nazwę produktu: ")
+                ilosc = input("Podaj nową ilość: ")
+                cena = input("Podaj nową cenę: ")
+
+                produkty.remove(produkt)
+                produkty.append((nr, nazwa, ilosc, cena))
+                break
+
+    while True:
+        print("1. Dodaj produkt")
+        print("2. Usuń produkt")
+        print("3. Wyświetl produkty")
+        print("4. Zmodyfikuj produkt")
+        print("5. Zakończ")
+
+        wybor = input("Wybierz opcję: ")
+
+        if wybor == "1":
+            dodaj_produkt()
+        elif wybor == "2":
+            usun_produkt()
+        elif wybor == "3":
+            wyswietl_produkty()
+        elif wybor == "4":
+            zmodyfikuj_produkt()
+        elif wybor == "5":
+            break
+        else:
+            print("Nie prawidłowy wybór!")
