@@ -1,0 +1,26 @@
+w zad1() stworzylem skrypt ktory prosi od uzytkownika 3 zmienne. Pierwsza to start - liczba poczatkowa,
+druga to end - liczba koncowa i distance - wielkosc odstepu.
+Pozniej majac te informarcje wypisuje liczby od start do end i z odstepami rowna distance.
+
+W zad 2() stworzylem skrypt, ktory otrzymuje komunikat od uzytkownika i wypisuje go w odrotnej kolejnosci.
+
+w zad3() stworzylem skrypt, ktory losowo wybierze slowo z tablicy words. Nastepnie podaje ile jest liter w slowie i
+pozwala uzytkownikowi na odgadniecie jakiej litery sie znajduje w slowie. Uzytkownik ma 5 prob i po 5 probach musi napisac to slowo.
+Jezeli odgadnie to wyswietla sie komunikat ze odgadl slowo, a jak nie to system pokazuje to slowo.
+
+W zad4() stworzylem skrypt, ktory ma zasymulowac gre "szybienica". W programie stworzylem funkcje display_word() ktora ma za zadanie
+wyswietlenie liter juz odgadnionych. Na poczatku gracz dostaje 6 prob i za kazdym razem jak zle odgadnie litere to traci 1 probe.
+System w kazdej turze informuje jakie litery zostaly uzyte a litery dobrze odgadnione beda wyswietlone w poprawnych miejscach.
+Jezeli uzytkownik odgadnie wszystkie litery w slowie to wygra gre a jak nie to system pod koniec wyswietli to slowo.
+
+W zad5() stworzylem gre w kolko i krzyzyk. Stworzylem nastepne funkcje:
+display_board() - do wyswietlenia planszy gry.
+player_input() - zapyta gracza pierwszego, który symbol chce wybrać. Dostępne opcje to X/x lub O/o.
+place_marker() - przypisze znacznik do naszej listy, zastępując znak # na danej pozycji.
+space_check() - sprawdza czy na danym polu jest znak #.
+full_board_check() - sprawdza cala plansze gry
+win_check() - sprawdza czy ktorys z graczy wygral gre.
+player_choice() - pyta użytkownika o jego wybór. Dopóki ten nie wybierze wolnego miejsca, będzie pytany do skutku o puste pole.
+replay() - pyta uzytkownika czy chce ponownie zagrac
+Na poczatku gracze wybieraja czy sa X czy O. Nastepnie kazdy z graczy wybierze pusta pole. Gra bedzie trwala dopoki ktos wygra albo wszystkie pole
+beda zajete. Pod koniec gracz moze ponownie zagrac albo zakonczyc gre.
