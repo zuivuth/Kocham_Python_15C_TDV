@@ -1,0 +1,164 @@
+import heapq
+
+def zad1():
+    produkty = []
+
+    def dodaj_produkt():
+        nr = input("Podaj numer: ")
+        nazwa = input("Podaj nazwę produktu: ")
+        ilosc = input("Podaj ilość: ")
+        cena = input("Podaj cenę: ")
+
+        produkty.append((nr, nazwa, ilosc, cena))
+
+    def usun_produkt():
+        nr = input("Podaj numer produktu do usunięcia: ")
+        for produkt in produkty:
+            if nr == produkt[0]:
+                produkty.remove(produkt)
+                break
+
+    def wyswietl_produkty():
+        print("Nr\tNazwa\t\tIlość\tCena")
+        for produkt in produkty:
+            print(produkt[0] + "\t" + produkt[1] + "\t\t" + produkt[2] + "\t" + produkt[3])
+
+    def zmodyfikuj_produkt():
+        nr = input("Podaj numer produktu do zmodyfikowania: ")
+        for produkt in produkty:
+            if nr == produkt[0]:
+                nazwa = input("Podaj nową nazwę produktu: ")
+                ilosc = input("Podaj nową ilość: ")
+                cena = input("Podaj nową cenę: ")
+
+                produkty.remove(produkt)
+                produkty.append((nr, nazwa, ilosc, cena))
+                break
+
+    while True:
+        print("1. Dodaj produkt")
+        print("2. Usuń produkt")
+        print("3. Wyświetl produkty")
+        print("4. Zmodyfikuj produkt")
+        print("5. Zakończ")
+
+        wybor = input("Wybierz opcję: ")
+
+        if wybor == "1":
+            dodaj_produkt()
+        elif wybor == "2":
+            usun_produkt()
+        elif wybor == "3":
+            wyswietl_produkty()
+        elif wybor == "4":
+            zmodyfikuj_produkt()
+        elif wybor == "5":
+            break
+        else:
+            print("Nie prawidłowy wybór!")
+
+class Vertex:
+    def __init__(self, name):
+        self.name = name
+        self.neighbors = []
+        self.distance = float('inf')
+        self.visited = False
+        self.previous = None
+
+    def add_neighbor(self, neighbor, weight):
+        self.neighbors.append((neighbor, weight))
+
+    def get_neighbors(self):
+        return self.neighbors
+
+    def get_distance(self):
+        return self.distance
+
+    def set_distance(self, distance):
+        self.distance = distance
+
+    def get_previous(self):
+        return self.previous
+
+    def set_previous(self, previous):
+        self.previous = previous
+
+class Dijkstra:
+    @staticmethod
+    def shortest_path(start_vertex):
+        start_vertex.set_distance(0)
+        heap = [(0, start_vertex)]
+        heapq.heapify(heap)
+
+        while heap:
+            current_vertex = heapq.heappop(heap)
+            current_vertex = current_vertex[1]
+            current_vertex.visited = True
+
+            for neighbor, weight in current_vertex.get_neighbors():
+                if not neighbor.visited:
+                    new_distance = current_vertex.get_distance() + weight
+
+                    if new_distance < neighbor.get_distance():
+                        neighbor.set_distance(new_distance)
+                        neighbor.set_previous(current_vertex)
+
+                        for i in heap:
+                            if i[1] == neighbor:
+                                i[0] = new_distance
+                                heapq.heapify(heap)
+                                break
+                        else:
+                            heapq.heappush(heap, (new_distance, neighbor))
+
+
+def shortest_path_to(end_vertex):
+    path = []
+    current_vertex = end_vertex
+
+    while current_vertex:
+        path.insert(0, current_vertex.name)
+        current_vertex = current_vertex.get_previous()
+
+class Osoba:
+    def __init__(self, imie, nazwisko, plec, data_urodzenia):
+        self.imie = imie
+        self.nazwisko = nazwisko
+        self.plec = plec
+        self.data_urodzenia = data_urodzenia
+
+    def wyswietl_info(self):
+        return ['Imię: {}'.format(self.imie),
+                'Nazwisko: {}'.format(self.nazwisko),
+                'Płeć: {}'.format(self.plec),
+                'Data urodzenia: {}'.format(self.data_urodzenia)]
+
+    @staticmethod
+    def wyswietl_osoby(osoby):
+        info = {}
+        for i, osoba in enumerate(osoby, 1):
+            info['Osoba{}'.format(i)] = osoba.wyswietl_info()
+        return info
+
+
+class Gracz(Osoba):
+    def __init__(self, imie, nazwisko, plec, data_urodzenia, nick, typ, email):
+        super().__init__(imie, nazwisko, plec, data_urodzenia)
+        self.nick = nick
+        self.typ = typ
+        self.email = email
+
+    def wyswietl_info(self, format='lista'):
+        info = super().wyswietl_info()
+        info.append('Nick: {}'.format(self.nick))
+        info.append('Typ: {}'.format(self.typ))
+        info.append('Email: {}'.format(self.email))
+        return info
+
+    @staticmethod
+    def wyswietl_graczy(gracze):
+        info = {}
+        for i, gracz in enumerate(gracze, 1):
+            info['Gracz{}'.format(i)] = gracz.wyswietl_info()
+        return info
+
