@@ -1,0 +1,107 @@
+import math
+import Kalkulator
+import os
+from random import sample
+from string import ascii_letters
+
+def zad1():
+    a = float(input("Podaj współczynnik a: "))
+    b = float(input("Podaj współczynnik b: "))
+    c = float(input("Podaj współczynnik c: "))
+    delta = b ** 2 - 4 * a * c
+
+    if delta >= 0:
+        x1 = (-b + math.sqrt(delta)) / (2 * a)
+        x2 = (-b - math.sqrt(delta)) / (2 * a)
+    else:
+        print("Brak pierwiastków rzeczywistych.")
+        return
+    print(f"Pierwiastki równania: x1 = {x1:.2f}, x2 = {x2:.2f}")
+
+def zad2(x):
+    if x > 0:
+        print(1)
+    elif x < 0:
+        print(-1)
+    else:
+        print(0)
+
+def menu():
+    print("1. Dodawanie")
+    print("2. Odejmowanie")
+    print("3. Mnożenie")
+    print("4. Dzielenie")
+    print("5. Wyjście")
+
+def wczytaj_liczbe():
+    while True:
+        liczba = float(input("Podaj liczbę (różną od zera): "))
+        if liczba != 0:
+            return liczba
+        else:
+            print("Liczba musi być różna od zera!")
+
+# Główna pętla programu
+def zad3():
+    while True:
+        menu()
+        wybor = input("Wybierz operację (1-5): ")
+
+        if wybor == "1":
+            a = wczytaj_liczbe()
+            b = wczytaj_liczbe()
+            wynik = Kalkulator.dodawanie(a, b)
+            print("Wynik dodawania:", wynik)
+        elif wybor == "2":
+            a = wczytaj_liczbe()
+            b = wczytaj_liczbe()
+            wynik = Kalkulator.odejmowanie(a, b)
+            print("Wynik odejmowania:", wynik)
+        elif wybor == "3":
+            a = wczytaj_liczbe()
+            b = wczytaj_liczbe()
+            wynik = Kalkulator.mnozenie(a, b)
+            print("Wynik mnożenia:", wynik)
+        elif wybor == "4":
+            a = wczytaj_liczbe()
+            b = wczytaj_liczbe()
+            wynik = Kalkulator.dzielenie(a, b)
+            print("Wynik dzielenia:", wynik)
+        elif wybor == "5":
+            print("Program zakończony.")
+            break
+        else:
+            print("Niepoprawny wybór. Spróbuj ponownie.")
+def zad4():
+    folder_path = "Pobrane"
+
+    if os.path.exists(folder_path) and os.path.isdir(folder_path):
+        print(f"Zawartość folderu {folder_path}:")
+
+        for item in os.listdir(folder_path):
+            item_path = os.path.join(folder_path, item)
+
+            if os.path.isfile(item_path):
+                print(f"{item} - Plik")
+            elif os.path.isdir(item_path):
+                print(f"{item} - Folder")
+    else:
+        print(f"Folder {folder_path} nie istnieje.")
+
+def zad5():
+    five_letters = ''.join(sample(ascii_letters, 5))
+    print("Pięć losowych liter:", five_letters)
+   
+'''kod pliku Kalkulator.py
+def dodawanie(a, b):
+    return a + b
+
+def odejmowanie(a, b):
+    return a - b
+
+def mnozenie(a, b):
+    return a * b
+
+def dzielenie(a, b):
+    return a / b
+'''
