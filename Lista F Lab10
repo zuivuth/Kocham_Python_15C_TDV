@@ -1,0 +1,53 @@
+import re
+import string
+from collections import Counter
+import random
+import pickle
+import json
+
+def zad1():
+    raw_text = "Wyślij email na adres: info@template.com lubsales-info@template.it"
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, raw_text)
+    print(matches)
+
+def zad2():
+    text = 'Programowanie w języku Python – od A do Z'
+    words = re.split(r'\s', text)
+    print(words)
+
+def zad3():
+    lowercase_letters = string.ascii_lowercase
+    uppercase_letters = string.ascii_uppercase
+    print(lowercase_letters)
+    print(uppercase_letters)
+
+def zad4():
+    items = ['YES', 'NO', 'NO', 'YES', 'EMPTY', 'YES', 'NO']
+    counter = Counter(items)
+    print(counter)
+
+def zad5():
+    random.seed(12)
+    items = ['python', 'java', 'sql', 'c++', 'c']
+    random_element = random.choice(items)
+    print(random_element)
+
+def zad6():
+    random.seed(15)
+    items = ['python', 'java', 'sql', 'c++', 'c']
+    random_element = random.choice(items)
+    print(random_element)
+
+def zad7():
+    ids = ['001', '003', '011']
+
+    # Zapisz listę do pliku za pomocą modułu pickle
+    with open('data.pickle', 'wb') as file:
+        pickle.dump(ids, file)
+
+def zad8():
+    js = {'PLW': 360.0, 'TEN': 320.0, 'CDR': 329.0}
+    js_str = json.dumps(string, sort_keys=True, indent=4)
+    print(js_str)
+    
