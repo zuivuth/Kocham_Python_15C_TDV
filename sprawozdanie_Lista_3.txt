@@ -1,0 +1,28 @@
+Sprawozdanie do listy 3.
+
+W zad1() użyłem modułu random do generowania losowych liczb. Główna funkcja programu mapętlę, która oczekuje na wciśnięcie klawisza Enter do rzutu kością. 
+Jeśli użytkownik wpisze '0', gra zostaje zakończona.
+Po każdym rzucie wynik jest wyświetlany na ekranie. 
+
+W zad2() napisałem program, który sprawdza, czy wprowadzone hasło jest zgodne z prawidłowym hasłem. Program będzie działać dopóki użytkownik dobrze wpisze hasło.
+
+W zad3() napisałem program, który symuluje elitarny klub internetowy.
+W powyższym kodzie zdefiniowana jest klasa Uzytkownik, która reprezentuje użytkownika klubu internetowego. 
+Każdy użytkownik ma nazwę, hasło i poziom uprawnień.
+Klasa KlubInternetowy reprezentuje klub internetowy i przechowuje listę użytkowników. 
+Metoda dodaj_uzytkownika() służy do dodawania użytkowników do klubu, a metoda sprawdz_logowanie() sprawdza, czy podane przez użytkownika dane logowania są poprawne i zwraca poziom uprawnień danego użytkownika.
+W głównej części programu, tworzone są obiekty reprezentujące użytkowników klubu. 
+Następnie użytkownik jest proszony o podanie nazwy użytkownika i hasła, które są sprawdzane przy użyciu metody sprawdz_logowanie(). 
+Jeśli dane logowania są poprawne, program wyświetla odpowiednie powitanie w zależności od poziomu uprawnień użytkownika.
+
+W zad4() napisałem program, który przechowuje listę przepowiedni a następnie wybiera losową przepowiednię z dostępnych, a wynik jest wyświetlany na ekranie.
+
+W zad5() napisałem program, który symuluje 100 rzutów monetą. W pętli for wykonuje się 100 rzutów moneta. Za każdym razem wynik rzutu jest sprawdzany. 
+Jeśli wynik to 'orzeł', zmienna orly jest zwiększana o 1, w przeciwnym razie zmienna reszki jest zwiększana o 1.
+
+W zad6() napisałem program, który symuluje działanie telewizora. 
+W powyższym kodzie klasa Telewizor definiuje telewizor jako obiekt z atrybutami kanal i glosnosc (numer kanału i głośność). 
+Metoda zmien_kanal() pozwala na zmianę aktualnego kanału, a metody zwieksz_glosnosc() i zmniejsz_glosnosc() pozwalają na zwiększenie i zmniejszenie głośności odpowiednio o 1 poziom.
+W głównej części programu, pętla while wyświetla dostępne opcje użytkownikowi i oczekuje na wybór. 
+Po wybraniu odpowiedniej opcji, wywoływane są odpowiednie metody klasy Telewizor. 
+Użytkownik może wprowadzić numer kanału, zwiększyć lub zmniejszyć głośność, a także wyłączyć telewizor.
