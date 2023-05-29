@@ -1,0 +1,145 @@
+import random
+
+def zad1():
+    print("Witaj w grze w rzut kostką!")
+    while True:
+        print("\nNaciśnij Enter, aby rzucić kostką. Wpisz '0' i naciśnij Enter, aby zakończyć grę.")
+        wybor = input()
+
+        if wybor.lower() == '0':
+            print("Dziękujemy za grę. Do zobaczenia!")
+            break
+
+        wynik = random.randint(1, 6)
+        print("Wyrzucono:", wynik)
+
+def zad2():
+    print("Witaj w systemie logowania!")
+    haslo = "tajnehaslo"
+    while True:
+        if input("Wprowadź hasło: ") == haslo:
+            print("Poprawne hasło. Dostęp przyznany!")
+            break
+        else:
+            print("Nieprawidłowe hasło. Spróbuj ponownie.")
+
+
+class Uzytkownik:
+    def __init__(self, nazwa, haslo, poziom_uprawnien):
+        self.nazwa = nazwa
+        self.haslo = haslo
+        self.poziom_uprawnien = poziom_uprawnien
+
+
+class KlubInternetowy:
+    def __init__(self):
+        self.uzytkownicy = []
+
+    def dodaj_uzytkownika(self, uzytkownik):
+        self.uzytkownicy.append(uzytkownik)
+
+    def sprawdz_logowanie(self, nazwa, haslo):
+        for uzytkownik in self.uzytkownicy:
+            if uzytkownik.nazwa == nazwa and uzytkownik.haslo == haslo:
+                return uzytkownik.poziom_uprawnien
+        return None
+def zad3():
+    klub = KlubInternetowy()
+    admin = Uzytkownik("admin", "admin123", 3)
+    czlonek1 = Uzytkownik("czlonek1", "haslo1", 2)
+    czlonek2 = Uzytkownik("czlonek2", "haslo2", 1)
+    czlonek3 = Uzytkownik("czlonek3", "haslo3", 1)
+
+    klub.dodaj_uzytkownika(admin)
+    klub.dodaj_uzytkownika(czlonek1)
+    klub.dodaj_uzytkownika(czlonek2)
+    klub.dodaj_uzytkownika(czlonek3)
+    while True:
+        print("\nWitaj w klubie internetowym!")
+        nazwa = input("Podaj nazwę użytkownika: ")
+        haslo = input("Podaj hasło: ")
+
+        poziom_uprawnien = klub.sprawdz_logowanie(nazwa, haslo)
+
+        if poziom_uprawnien is not None:
+            if poziom_uprawnien == 3:
+                print("Witaj, admin!")
+                # Tutaj dodaj kod dla uprawnień poziomu 3
+            else:
+                print(f'Witaj, członek z uprawnieniami poziomu {poziom_uprawnien} !')
+            break
+        else:
+            print("Nieprawidłowa nazwa użytkownika lub hasło. Spróbuj ponownie.")
+
+def zad4():
+    przepowiednie = [
+        "Co masz zrobić dziś… zrób dziś.",
+        "Dzisiaj jest twój dobry dzień.",
+        "Nie ma rzeczy niemożliwych.",
+        "Nie czekaj, działaj!"
+    ]
+    print("Ciasteczko z wróżbą mówi:")
+    wróżba = random.choice(przepowiednie)
+    print(wróżba)
+
+def zad5():
+    orly = 0
+    reszki = 0
+
+    for _ in range(100):
+        wynik_rzutu = random.choice(['orzeł', 'reszka'])
+
+        if wynik_rzutu == 'orzeł':
+            orly += 1
+        else:
+            reszki += 1
+
+    print("Liczba orłów:", orly)
+    print("Liczba reszek:", reszki)
+
+
+class Telewizor:
+    def __init__(self):
+        self.kanal = 1  # Domyślny kanał
+        self.glosnosc = 5  # Domyślna głośność
+
+    def zmien_kanal(self, nowy_kanal):
+        self.kanal = nowy_kanal
+        print("Zmieniono kanał na", self.kanal)
+
+    def zwieksz_glosnosc(self):
+        if self.glosnosc < 10:
+            self.glosnosc += 1
+        print("Głośność:", self.glosnosc)
+
+    def zmniejsz_glosnosc(self):
+        if self.glosnosc > 0:
+            self.glosnosc -= 1
+        print("Głośność:", self.glosnosc)
+
+
+def zad6():
+    telewizor = Telewizor()
+
+    while True:
+        print("\nTelewizor")
+        print("1. Zmienić kanał")
+        print("2. Zwiększyć głośność")
+        print("3. Zmniejszyć głośność")
+        print("4. Wyłączyć telewizor")
+
+        wybor = input("Wybierz opcję: ")
+
+        if wybor == '1':
+            nowy_kanal = int(input("Podaj numer kanału: "))
+            telewizor.zmien_kanal(nowy_kanal)
+        elif wybor == '2':
+            telewizor.zwieksz_glosnosc()
+        elif wybor == '3':
+            telewizor.zmniejsz_glosnosc()
+        elif wybor == '4':
+            print("Telewizor wyłączony. Do widzenia!")
+            break
+        else:
+            print("Nieprawidłowa opcja. Spróbuj ponownie.")
+zad6()
